@@ -50,17 +50,29 @@ const displayPhoneDetail = phone => {
             <p class="card-text">Brand: ${phone.brand}</p>
             <p class="card-text">Release Date: ${phone.releaseDate ? phone.releaseDate : "No Release Date Found"}</p>
         </div>
-        <h4 class="p-2">Main Features</h4>
+
         <ul class="list-group list-group-flush">
+            <li class="list-group-item">Main Features</li>
             <li class="list-group-item">chipSet : ${phone.mainFeatures.chipSet}</li>
             <li class="list-group-item">display : ${phone.mainFeatures.displaySize}</li>
             <li class="list-group-item">Memory : ${phone.mainFeatures.memory}</li>
             <li class="list-group-item">Storage : ${phone.mainFeatures.storage}</li>
-            <li class="list-group-item">sensors : ${phone.mainFeatures.sensors}</li>
+
         </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Sensors</li>
+            <li class="list-group-item">${phone.mainFeatures.sensors.toString()}</li>
+        </ul>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Others</li>
+            <li class="list-group-item">Bluetooth : ${phone.others.Bluetooth}</li>
+            <li class="list-group-item">GPS : ${phone.others.GPS}</li>
+            <li class="list-group-item">NFC : ${phone.others.NFC}</li>
+            <li class="list-group-item">Radio : ${phone.others.Radio}</li>
+            <li class="list-group-item">USB : ${phone.others.USB}</li>
+            <li class="list-group-item">WLAN : ${phone.others.WLAN}</li>
+        </ul>
+
     `
     phoneDetail.appendChild(div);
 }
