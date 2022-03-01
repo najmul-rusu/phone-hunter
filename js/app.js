@@ -5,14 +5,23 @@ const searchPhone = () => {
         // clear data 
         searchField.value = '';
         // error msg 
+        const errorMsg = document.getElementById('error-msg');
+        const emptyErrorMsg = document.getElementById('empty-error-msg');
+        const searchResult = document.getElementById('search-result');
+        const phoneDetail = document.getElementById('phone-datil');
         if (searchText == '') {
-            alert("Please Write Something To Display")
+            searchResult.textContent = '';
+            phoneDetail.textContent = '';
+            errorMsg.style.display = 'none';
+            emptyErrorMsg.style.display = 'block';
+            // alert("Please Write Something To Display")
         } else {
+            emptyErrorMsg.style.display = 'none';
             const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
 
             fetch(url)
                 .then(res => res.json())
-                .then(data => displaySearchReult(data.data));
+                .then(data => displaySearchReult(data.data.slice(0, 20)));
         }
     }
     // search result 
@@ -74,7 +83,7 @@ const displayPhoneDetail = phone => {
             <p class="card-text">Brand: ${phone.brand}</p>
             <p class="card-text">Release Date: ${phone.releaseDate ? phone.releaseDate : "Release Date Not Found"}</p>
         </div>
-        // Main Features
+
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><b>Main Features</b></li>
             <li class="list-group-item">chip Set : ${phone.mainFeatures.chipSet}</li>
@@ -83,21 +92,21 @@ const displayPhoneDetail = phone => {
             <li class="list-group-item">Storage : ${phone.mainFeatures.storage}</li>
         
         </ul>
-        // Sensors
+
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><b>Sensors</b></li>
             <li class="list-group-item">${phone.mainFeatures.sensors.toString()}</li>
         </ul>
 
-        // Others Features
+
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><b>Others</b></li>
-            <li class="list-group-item">Bluetooth : ${phone.others.Bluetooth}</li>
-            <li class="list-group-item">GPS : ${phone.others.GPS}</li>
-            <li class="list-group-item">NFC : ${phone.others.NFC}</li>
-            <li class="list-group-item">Radio : ${phone.others.Radio}</li>
-            <li class="list-group-item">USB : ${phone.others.USB}</li>
-            <li class="list-group-item">WLAN : ${phone.others.WLAN}</li>
+            <li class="list-group-item">Bluetooth : ${phone.others ? phone.others.Bluetooth : "N/A"} </li>
+            <li class="list-group-item">GPS : ${phone.others ? phone.others.GPS : "N/A"}</li>
+            <li class="list-group-item">NFC : ${phone.others ? phone.others.NFC : "N/A"}</li>
+            <li class="list-group-item">Radio : ${phone.others ? phone.others.Radio : "N/A"}</li>
+            <li class="list-group-item">USB : ${phone.others ? phone.others.USB : "N/A"}</li>
+            <li class="list-group-item">WLAN : ${phone.others ? phone.others.WLAN : "N/A"}</li>
         </ul>
 
     `

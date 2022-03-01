@@ -8,6 +8,10 @@
     display: none;
 }
 
+#empty-error-msg {
+    display: none;
+}
+
 h1 {
     font-family: 'Righteous', cursive;
 }
