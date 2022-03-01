@@ -11,32 +11,32 @@
     <link rel="stylesheet" href="css/style.css">
     <!--======== bootstrap CSS link ========-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-
+    <!-- fevicon -->
+    <link rel="shortcut icon" href="images/EveDiva Fevicon.png" type="image/x-icon">
 </head>
 
-<body>
-    <main class="container">
-
-        <head class="">
-            <h2 class="">New Phone Collections</h2>
-        </head>
-        <section>
+<body class="container">
+    <main>
+        <header class="py-1">
+            <h1 class="text-dark text-center mt-5 pt-5">New Phone Collections</h1>
+            <p class="text-dark text-center my-3">Don't miss out on some special items at extraordinary. <br> For a limited time!</p>
+        </header>
+        <section class="">
             <!-- search aria  -->
-            <div class="input-group mb-3 w-50 mx-auto">
-                <input id="search-field" type="text" class="form-control" placeholder="Search phone..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button onclick="searchPhone()" class="btn btn-outline-secondary" type="button" id="search-btn">Search</button>
+            <div class="input-group my-2 w-75 mx-auto shadow-sm">
+                <input id="search-field" type="text" class="form-control" placeholder="Search phone..." aria-label="seach aria" aria-describedby="button-addon2">
+                <button onclick="searchPhone()" class="btn btn-outline-dark btn-lg " type="button" id="search-btn">Search</button>
             </div>
+
             <!-- error msg -->
             <p id="error-msg" class="text-danger mx-auto">Search Result Not Found...</p>
 
             <!-- phone datile -->
-            <div id="phone-datil" class="w-50 mx-auto">
-
+            <div id="phone-datil" class="w-50 mx-auto mt-5 shadow-sm">
             </div>
 
             <!-- search result -->
-            <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
+            <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4 mt-3">
             </div>
         </section>
     </main>
